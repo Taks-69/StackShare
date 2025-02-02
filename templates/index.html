@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StackShare</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <div class="files-section">
+      <h1>StackShare</h1>
+      <!-- Display current path -->
+      <div class="current-path">
+        <p>Current Path: /{{ current_path }}</p>
+      </div>
+      <!-- Folder creation form -->
+      <div class="folder-creation">
+        <input type="text" id="new-folder-name" placeholder="New folder name">
+        <button id="create-folder-btn">Create Folder</button>
+      </div>
+      <button id="refresh-btn" class="refresh-btn">Refresh Files</button>
+      <ul id="file-list"></ul>
+    </div>
+
+    <div class="upload-section">
+      <div class="upload-box">
+        <h2>Drag & Drop Your Files</h2>
+        <!-- Hidden file input -->
+        <input type="file" id="fileInput" multiple hidden>
+        <div id="drop-area" class="drop-area" onclick="document.getElementById('fileInput').click()">
+          <p>Drag files here or click to select</p>
+        </div>
+        <ul id="selected-files-list"></ul>
+        <button id="upload-btn" class="upload-btn" style="display:none;">Upload</button>
+        <div id="loadingIndicator" style="display:none;">Uploading...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Preview popup -->
+  <div id="preview-popup" class="preview-popup" style="display:none;">
+    <div class="preview-content" id="preview-content"></div>
+  </div>
+
+  <script>
+    // Set currentPath from server-side variable
+    const currentPath = "{{ current_path }}";
+  </script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .files-section {
+    width: 50%;
+    padding: 20px;
+    background-color: #2e2e2e;
+    position: relative;
+    text-align: center;
+  }
+  
+  .current-path p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .files-section h1 {
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  .folder-creation {
+    margin-bottom: 10px;
+  }
+  
+  .folder-creation input {
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #888;
+  }
+  
+  .folder-creation button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  .folder-creation button:hover {
+    background-color: #45a049;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .file-item {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #3e3e3e;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .file-item:hover {
+    background-color: #5e5e5e;
+  }
+  
+  .file-actions button {
+    margin-left: 5px;
+    padding: 3px 6px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .file-actions button.delete {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .file-actions button.rename {
+    background-color: #f1c40f;
+    color: white;
+  }
+  
+  .file-actions button.move {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .upload-section {
+    width: 50%;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-left: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .upload-box {
+    text-align: center;
+  }
+  
+  #drop-area {
+    background-color: #2e2e2e;
+    border: 2px dashed #888;
+    border-radius: 10px;
+    padding: 50px;
+    margin-top: 20px;
+    color: #bbb;
+    cursor: pointer;
+  }
+  
+  #drop-area:hover {
+    border-color: #fff;
+  }
+  
+  .upload-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+  }
+  
+  .upload-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .preview-popup {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    top: 10px;
+    left: 250px;
+    z-index: 10;
+    width: 300px;
+  }
+  
+  .preview-content {
+    color: #fff;
+    word-wrap: break-word;
+  }
+  
+  .preview-popup img {
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  #selected-files-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  #selected-files-list li {
+    background-color: #3e3e3e;
+    border: 1px solid #555;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+  }
+  
+  #selected-files-list li:hover {
+    background-color: #5e5e5e;
+  }
+  
+  #selected-files-list li button {
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  #selected-files-list li button:hover {
+    background-color: rgba(255, 0, 0, 0.2);
+  }
+  
+  .refresh-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .refresh-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .refresh-btn:active {
+    background-color: #3e8e41;
+    transform: scale(0.98);
+  }
+  
+  #loadingIndicator {
+    margin-top: 20px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
